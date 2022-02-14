@@ -1,15 +1,20 @@
 import React from "react";
-import Generic from "../components/Generic";
 import Navbar from "../components/Navbar";
-import Home from "../components/Home";
 import { Container } from "./style";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { navbar } from "../utils/navbar";
 
 const Root = () => {
   return (
     <Container>
       <BrowserRouter>
-        <Navbar />
+        <Routes>
+          <Route element={<Navbar />}>
+            {navbar.map(({ path, id, Element }) => (
+              <Route key={id} path={path}   element={<Element />} />
+            ))}
+          </Route>
+        </Routes>
       </BrowserRouter>
     </Container>
   );

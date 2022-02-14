@@ -1,12 +1,12 @@
 import React from "react";
 import { Container } from "./style";
 
-const Home = () => {
+const Root = () => {
   return (
     <Container>
-      <div>Home</div>
+      <h1>Home reality</h1>
     </Container>
   );
 };
 
-export default Home;
+export default Root;

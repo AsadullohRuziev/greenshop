@@ -1,17 +1,46 @@
-import React from "react";
-import { Container } from "./style";
+import React, { useState } from "react";
+import {
+  Container,
+  ItemsGroup,
+  LinkGroup,
+  Logo,
+  LogoWrapper,
+  Link,
+} from "./style";
 import { navbar } from "../../utils/navbar";
+import logo from "../../assets/icons/logo.svg";
+import { HiOutlineLogout, HiOutlineSearch } from "react-icons/hi";
+import { FiShoppingCart } from "react-icons/fi";
+import { Outlet } from "react-router-dom";
 
 const Navbar = () => {
+  const [active, setActive] = useState("/home");
   return (
-    <Container>
-      <div>Navbar</div>
-        {
-          navbar.map(value => (
-            <h1>{value.title}</h1>
-          ))
-        }
-    </Container>
+    <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+      <Container>
+        <LogoWrapper>
+          <Logo src={logo} alt="Logo" />
+          Greenshop
+        </LogoWrapper>
+        <LinkGroup>
+          {navbar.map((value) => (
+            <Link
+              onClick={() => setActive(value.path)}
+              active={active === value.path}
+              to={value.path}
+            >
+              {value.title}
+            </Link>
+          ))}
+        </LinkGroup>
+        <ItemsGroup>
+          <HiOutlineSearch />
+          <FiShoppingCart />
+          <HiOutlineLogout />
+        </ItemsGroup>
+      </Container>
+      <Outlet />
+    </div>
   );
 };
 
