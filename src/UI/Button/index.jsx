@@ -2,9 +2,9 @@ import React from 'react'
 import { Buttons } from './style.js';
 
 
-const Button = (props) => {
+const Button = ({icon, title}) => {
   return (
-      <Buttons></Buttons>
+      <Buttons> {icon}{title}</Buttons>
   )
 }
 

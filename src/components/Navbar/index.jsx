@@ -8,10 +8,11 @@ import {
   Link,
 } from "./style";
 import { navbar } from "../../utils/navbar";
-import logo from "../../assets/icons/logo.svg";
+import { logo } from "../../utils/icons";
 import { HiOutlineLogout, HiOutlineSearch } from "react-icons/hi";
 import { FiShoppingCart } from "react-icons/fi";
 import { Outlet } from "react-router-dom";
+import Button from "../../UI/Button";
 
 const Navbar = () => {
   const [active, setActive] = useState("/home");
@@ -34,9 +35,16 @@ const Navbar = () => {
           ))}
         </LinkGroup>
         <ItemsGroup>
-          <HiOutlineSearch />
-          <FiShoppingCart />
-          <HiOutlineLogout />
+          <HiOutlineSearch style={{ fontSize: "20px" }} />
+          <FiShoppingCart style={{ fontSize: "20px" }} />
+          <Button
+            icon={
+              <HiOutlineLogout
+                style={{ fontSize: "30px", paddingRight: "10px" }}
+              />
+            }
+            title={"Login"}
+          />
         </ItemsGroup>
       </Container>
       <Outlet />

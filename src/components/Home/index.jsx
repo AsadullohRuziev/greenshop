@@ -1,12 +1,12 @@
 import React from "react";
+import Banner from "../Banner";
 import { Container } from "./style";
-import Button from "../../UI/Button";
 
 
 const Root = () => {
   return (
     <Container>
-      <Button>ok</Button>
+      <Banner/>
     </Container>
   );
 };
