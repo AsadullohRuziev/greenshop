@@ -2,7 +2,7 @@ import React from "react";
 import { BannerSection, H1, Planet, Welcome } from "./style";
 import Text from "../Text";
 import Button from "../../UI/Button";
-// import { BannerImg } from "../../utils/images";
+import BannerImg from "../../assets/images/banner.png";
 
 const Banner = () => {
   return (
@@ -20,7 +20,7 @@ const Banner = () => {
         <Button title={"SHOP NOW"} />
       </div>
       <div className="w-1/2 ">
-          {/* <BannerImg/> */}
+        <BannerImg />
       </div>
     </BannerSection>
   );

@@ -8,7 +8,7 @@ import {
   Link,
 } from "./style";
 import { navbar } from "../../utils/navbar";
-import { logo } from "../../utils/icons";
+import logo from "../../assets/icons/logo.svg";
 import { HiOutlineLogout, HiOutlineSearch } from "react-icons/hi";
 import { FiShoppingCart } from "react-icons/fi";
 import { Outlet } from "react-router-dom";
